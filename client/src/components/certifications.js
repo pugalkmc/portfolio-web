@@ -11,7 +11,7 @@ const Certifications = () => {
 
   const fetchCertificates = async () => {
     try {
-      const response = await axios.get('https://serverless-zeta-pearl.vercel.app/certificates');
+      const response = await axios.get('https://backend-chi-topaz.vercel.app/certificates');
       setCertificates(response.data);
     } catch (error) {
       console.error('Error fetching certificates:', error);

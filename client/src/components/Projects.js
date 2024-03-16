@@ -11,7 +11,7 @@ const Projects = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('https://serverless-zeta-pearl.vercel.app/projects');
+      const response = await axios.get('https://backend-chi-topaz.vercel.app/projects');
       setProjects(response.data);
     } catch (error) {
       console.error('Error fetching projects:', error);

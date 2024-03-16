@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const AddProject = () => {
+const AddCertificate = () => {
   const [formData, setFormData] = useState({
-    title: '',
+    name: '',
     description: '',
     imageUrl: '',
-    githubUrl: '',
-    demoUrl: ''
+    link: '',
+    date: ''
   });
 
   const handleChange = (e) => {
@@ -18,36 +18,36 @@ const AddProject = () => {
     e.preventDefault();
     try {
       // Validate required fields
-      if (!formData.title || !formData.description) {
+      if (!formData.name || !formData.description) {
         alert('Please enter all required fields.');
         return;
       }
       
       // Post data to backend
-      await axios.post('https://serverless-zeta-pearl.vercel.app/projects', formData);
-      alert('Project added successfully!');
+      await axios.post('https://backend-chi-topaz.vercel.app/certificates', formData);
+      alert('Certificate added successfully!');
       
       // Clear form after submission
       setFormData({
-        title: '',
+        name: '',
         description: '',
         imageUrl: '',
-        githubUrl: '',
-        demoUrl: ''
+        link: '',
+        date: ''
       });
     } catch (error) {
-      console.error('Error adding project:', error);
-      alert('An error occurred while adding the project. Please try again.');
+      console.error('Error adding certificate:', error);
+      alert('An error occurred while adding the certificate. Please try again.');
     }
   };
 
   return (
     <div className="container">
-      <h2>Add Project</h2>
+      <h2>Add Certificate</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label className="form-label">Title *</label>
-          <input type="text" className="form-control" name="title" value={formData.title} onChange={handleChange} required />
+          <label className="form-label">Name *</label>
+          <input type="text" className="form-control" name="name" value={formData.name} onChange={handleChange} required />
         </div>
         <div className="mb-3">
           <label className="form-label">Description *</label>
@@ -58,12 +58,12 @@ const AddProject = () => {
           <input type="text" className="form-control" name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <label className="form-label">GitHub URL</label>
-          <input type="text" className="form-control" name="githubUrl" value={formData.githubUrl} onChange={handleChange} />
+          <label className="form-label">Link</label>
+          <input type="text" className="form-control" name="link" value={formData.link} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <label className="form-label">Demo URL</label>
-          <input type="text" className="form-control" name="demoUrl" value={formData.demoUrl} onChange={handleChange} />
+          <label className="form-label">Date</label>
+          <input type="date" className="form-control" name="date" value={formData.date} onChange={handleChange} />
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
@@ -71,4 +71,4 @@ const AddProject = () => {
   );
 }
 
-export default AddProject;
+export default AddCertificate;
