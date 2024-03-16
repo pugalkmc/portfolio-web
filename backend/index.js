@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan())
 
-app.get('/', (res, res)=> {
+app.get('/', (req, res)=> {
   return res.json({message:'success'})
 })
 
@@ -49,7 +49,6 @@ app.post('/projects', async (req, res) => {
         demoUrl
       });
   
-      // Save project to database
       await project.save();
   
       res.status(201).json({ message: 'Project added successfully.' });
@@ -72,13 +71,9 @@ app.get('/certificates', async (req, res) => {
 app.post('/certificates', async (req, res) => {
     try {
       const { name, description, imageUrl, link, date } = req.body;
-  
-      // Validate required fields
       if (!name || !description) {
         return res.status(400).json({ error: 'Name and description are required fields.' });
       }
-  
-      // Create new certificate
       const certificate = new Certificate({
         name,
         description,
@@ -87,7 +82,6 @@ app.post('/certificates', async (req, res) => {
         date
       });
   
-      // Save certificate to database
       await certificate.save();
   
       res.status(201).json({ message: 'Certificate added successfully.' });
@@ -95,10 +89,9 @@ app.post('/certificates', async (req, res) => {
       console.error('Error adding certificate:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
-  });
-
-// Start server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
+
+PORT = process.env.PORT || 3000
+// app.listen(PORT, () => console.log(`Server ready on port ${PORT}`));
+
+export default app;

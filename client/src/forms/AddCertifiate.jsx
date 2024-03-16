@@ -24,7 +24,7 @@ const AddCertificate = () => {
       }
       
       // Post data to backend
-      await axios.post('http://localhost:3001/certificates', formData);
+      await axios.post('https://serverless-zeta-pearl.vercel.app/certificates', formData);
       alert('Certificate added successfully!');
       
       // Clear form after submission

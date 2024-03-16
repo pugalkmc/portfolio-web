@@ -3,7 +3,19 @@
     "cors": "^2.8.5",
     "express": "^4.18.3",
     "mongoose": "^8.2.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "vercel": "^33.6.1"
   },
-  "type": "module"
+  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo hello"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

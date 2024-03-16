@@ -24,7 +24,7 @@ const AddProject = () => {
       }
       
       // Post data to backend
-      await axios.post('http://localhost:3001/projects', formData);
+      await axios.post('https://serverless-zeta-pearl.vercel.app/projects', formData);
       alert('Project added successfully!');
       
       // Clear form after submission
