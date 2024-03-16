@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan())
 
+app.get('/', (res, res)=> {
+  return res.json({message:'success'})
+})
+
 // Routes
 app.get('/projects', async (req, res) => {
   try {
