@@ -1,0 +1,58 @@
+/* Certifications.css */
+
+/* Container styles */
+.container {
+    padding: 20px;
+  }
+  
+  /* Card styles */
+  .card {
+    transition: transform 0.3s ease;
+    border: 1px solid #dee2e6;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .text-muted {
+    font-size: 0.875rem;
+  }
+  
